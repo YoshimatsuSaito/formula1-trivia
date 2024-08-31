@@ -48,6 +48,9 @@ db = _cached_inmemory_db()
 list_driver = _cached_driver_list(_db=db)
 
 st.title("Formula 1 Trivia")
+st.markdown(
+    "This dashboard allows Formula 1 fans to explore various statistics as a hobby. New statistics will be added periodically."
+)
 
 # Driver trend
 st.subheader("Driver Trends")
