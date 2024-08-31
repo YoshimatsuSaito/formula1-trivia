@@ -55,7 +55,7 @@ st.markdown(
 # Driver trend
 st.subheader("Driver Trends")
 list_driver = st.multiselect(
-    "Select drivers",
+    "Select or type drivers",
     list_driver,
     default=["Max Verstappen", "Lewis Hamilton", "Fernando Alonso"],
 )
