@@ -1,0 +1,7 @@
+s3_grandprix_result_data_key:
+  "race_result": "data/race_result.csv"
+  "fastest_lap": "data/fastest_lap.csv"
+  "grid": "data/grid.csv"
+  "qualify": "data/qualify.csv"
+  "pit_stop": "data/pit_stop.csv"
+  "sprint": "data/sprint.csv"

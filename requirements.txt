@@ -1,0 +1,10 @@
+streamlit
+boto3
+pandas
+numpy
+matplotlib
+seaborn
+duckdb
+japanize-matplotlib
+PyYAML
+python-dotenv
