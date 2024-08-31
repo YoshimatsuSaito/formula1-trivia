@@ -60,16 +60,19 @@ list_driver = st.multiselect(
     default=["Max Verstappen", "Lewis Hamilton", "Fernando Alonso"],
 )
 
-dict_fig = dict()
-for window in [1, 5, 10, 20]:
-    dict_fig[window] = create_driver_trend_plot(
-        _db=db, list_driver=list_driver, window=window
-    )
+if len(list_driver) > 0:
+    dict_fig = dict()
+    for window in [1, 5, 10, 20]:
+        dict_fig[window] = create_driver_trend_plot(
+            _db=db, list_driver=list_driver, window=window
+        )
 
-window_chosen = st.radio(
-    "Select the moving average window size for positions",
-    [1, 5, 10, 20],
-    index=2,
-    horizontal=True,
-)
-st.pyplot(dict_fig[window_chosen])
+    window_chosen = st.radio(
+        "Select the moving average window size for positions",
+        [1, 5, 10, 20],
+        index=2,
+        horizontal=True,
+    )
+    st.pyplot(dict_fig[window_chosen])
+else:
+    st.error("Select a driver")
