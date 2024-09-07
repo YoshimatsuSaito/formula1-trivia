@@ -52,7 +52,11 @@ def _cached_constructor_list(_db: InmemoryDB) -> list[str]:
                 race_result    
         """
     )
-    return df["constructor"].tolist()
+    df["constructor_alias"] = df["constructor"].replace(
+        DICT_CONFIG["constructor_mapping"]
+    )
+    df.sort_values(by="constructor_alias", inplace=True)
+    return df["constructor_alias"].unique().tolist()
 
 
 # Cache
@@ -109,7 +113,10 @@ if genre == "constructor":
         dict_fig = dict()
         for window in [1, 5, 10, 20]:
             dict_fig[window] = create_constructor_trend_plot(
-                _db=db, list_constructor=list_selected_constructor, window=window
+                _db=db,
+                list_constructor=list_selected_constructor,
+                window=window,
+                dict_constructor_mapping=DICT_CONFIG["constructor_mapping"],
             )
 
         window_chosen = st.radio(
