@@ -106,7 +106,11 @@ if genre == "constructor":
     list_selected_constructor = st.multiselect(
         "Select or type constructors",
         list_constructor,
-        default=["Ferrari"],
+        default=[
+            "Red Bull",
+            "Mercedes",
+            "Ferrari",
+        ],
     )
 
     if len(list_constructor) > 0:
