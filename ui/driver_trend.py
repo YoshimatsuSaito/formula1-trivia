@@ -65,7 +65,7 @@ def create_driver_trend_plot(
     ax.set_xticks(ticks)
     ax.set_xticklabels(labels, rotation=45)
     ax.set_yticks(range(1, 21))
-    ax.set_ylim(1, 20)
+    ax.set_ylim(0.5, 20.5)
 
     ax.invert_yaxis()
     plt.tight_layout()
